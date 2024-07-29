@@ -1,0 +1,27 @@
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: slow-rotation 10s linear infinite;
+    transition: animation 0.3s ease;
+    cursor: pointer;
+}
+
+@keyframes fall-down {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        top: 90vh;
+        opacity: 0;
+    }
+}
+
+.falling-image {
+    position: absolute; /* 使用绝对定位以便于根据鼠标点击位置设置 */
+    width: 50px; /* 设置图片的宽度 */
+    height: 50px; /* 设置图片的高度 */
+    transform: translateX(-50%);
+    /*animation: fall-down 2s forwards;  确保动画结束后保持在最终状态 */
+    z-index: 2;
+}
