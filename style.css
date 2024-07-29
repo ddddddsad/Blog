@@ -1,0 +1,270 @@
+:root {
+    --z-background: 1;
+    --z-content: 2;
+}
+
+/* 设置基本的全局样式 */
+body {
+    font-family: 'Trebuchet MS', sans-serif; 
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: rgb(255, 247, 235);
+    color: #333333;
+    position: relative; 
+}
+
+.container {
+    position: absolute; /* 使用绝对定位 */
+    top: 50%; /* 设置距离顶部的距离 */
+    left: 50%; /* 设置距离左边的距离 */
+    transform: translate(-50%, -50%); /* 通过变换确保元素居中 */
+    text-align: center;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 高对比度模式样式 */
+@media (forced-colors: active) {
+    body {
+        background-color: Window;
+        color: WindowText;
+    }
+
+    .profile {
+        color: ButtonText;
+        background-color: ButtonFace;
+    }
+
+    .sidebar {
+        color: ButtonText;
+        background-color: ButtonFace;
+    }
+
+    .article-nav {
+        color: ButtonText;
+        background-color: ButtonFace;
+    }
+}
+
+/* 个人资料样式 */
+.profile {
+    text-align: center;
+    margin-bottom: 100px;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.profile .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.profile h1 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #ffffff;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.profile p {
+    font-size: 1em;
+    margin: 5px 0;
+    color: #ffffff;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.profile a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.profile a:hover {
+    color: #aaaaaa;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 275px;
+    background-color: #203431;
+    color: #ffffff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    position: fixed;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 侧边栏链接样式 */
+.sidebar p {
+    text-align: center;
+    display: block;
+    margin: 10px 0;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.sidebar p:hover {
+    color: #aaaaaa;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 二级菜单样式，默认隐藏 */
+.submenu {
+    display: flex;
+    margin-left: 20px;
+    transition: all 0.3s ease-in-out;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.sub-menu {
+    display: none;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.sub-menu.show {
+    display: block;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.sub-menu {
+    text-align: center;
+    width: 175px;
+    height: 100vh;
+    color: #434343;
+    position: fixed;
+    left: 325px;
+    top: 0;
+    background-color: rgb(255, 247, 235);
+    padding: 20px;
+    box-shadow: 4px 0 8px #0000001a;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.sub-menu p:hover {
+    text-align: center;
+    display: block;
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 文章导航样式 */
+.article-nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 150px;
+    background-color: #203431;
+    color: #ffffff;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    overflow-y: auto;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 文章导航链接样式 */
+.article-nav p {
+    text-align: center;
+    display: block;
+    margin: 10px 0;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.article-nav p:hover {
+    color: #aaaaaa;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.content {
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 内容区域标题样式 */
+.content h1 {
+    font-size: 2em;
+    margin-bottom: 50px;
+    color: #203431;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 内容区域副标题样式 */
+.content h2 {
+    font-size: 1.5em;
+    margin-top: 50px;
+    color: #203431;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 内容区域段落样式 */
+.content p {
+    line-height: 1.6;
+    margin-bottom: 5px;
+    color: #333333;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 内容区域图片样式 */
+.content img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    z-index: var(--z-content); /* 确保内容在前景 */
+    /* border: 1px solid black;*/
+}
+
+/* Softwares 链接悬停样式 */
+.sub-menu p:hover {
+    cursor: pointer;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 内容区域样式 */
+#main-content {
+    padding: 20px;
+    margin-left: 350px;
+    margin-right: 200px;
+    margin-bottom: 200px;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+@keyframes slow-rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: slow-rotation 10s linear infinite; /* 定义缓慢旋转的动画 */
+    transition: animation 0.3s ease; /* 平滑停止动画 */
+}
+
+.highlight {
+    background-color: #cbefe2; /* 设置背景颜色为浅蓝色 */
+    border-left: 10px solid #203431; /* 左侧的蓝色边框 */
+    padding: 10px; /* 内边距 */
+    margin: 10px 0; /* 上下外边距 */
+    border-radius: 10px; /* 圆角边框 */
+    z-index: var(--z-background); /* 确保内容在前景 */
+}

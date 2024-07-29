@@ -1,0 +1,167 @@
+/* 设置基本的全局样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f0f0f0; /* 背景颜色改为浅灰色 */
+    color: #333333; /* 文字颜色改为深灰色 */
+}
+
+/* 个人资料样式 */
+.profile {
+    text-align: center;
+    margin-bottom: 100px; /* 增加底部边距 */
+}
+
+.profile .avatar {
+    width: 100px; /* 头像宽度 */
+    height: 100px; /* 头像高度 */
+    border-radius: 50%; /* 圆形显示 */
+    margin-bottom: 10px;
+}
+
+.profile h1 {
+    font-size: 1.2em; /* 字体大小 */
+    margin: 10px 0; /* 上下边距 */
+    color: #ffffff; /* 姓名字体颜色 */
+}
+
+.profile p {
+    font-size: 1em; /* 字体大小 */
+    margin: 5px 0; /* 上下边距 */
+    color: #ffffff; /* 段落文字颜色 */
+}
+
+.profile a {
+    color: #ffffff; /* 链接颜色 */
+    text-decoration: none; /* 去掉下划线 */
+    transition: color 0.3s ease; /* 颜色变化过渡效果 */
+}
+
+.profile a:hover {
+    color: #aaaaaa; /* 悬停时的颜色 */
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 225px;
+    background-color: #333333; /* 背景颜色改为深灰色 */
+    color: #ffffff; /* 文字颜色改为白色 */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    position: fixed;
+}
+
+/* 侧边栏链接样式 */
+.sidebar p {
+    text-align: center;
+    display: block;
+    margin: 10px 0;
+    color: #ffffff; /* 链接颜色改为白色 */
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.sidebar p:hover {
+    color: #aaaaaa; /* 悬停时的颜色改为浅灰色 */
+}
+
+/* 二级菜单样式，默认隐藏 */
+.submenu {
+    display: flex;
+    margin-left: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.sub-menu {
+    display: none;
+}
+
+.sub-menu.show {
+    display: block;
+}
+
+.sub-menu {
+    width: 175px;
+    height: 100vh; /* 高度，占满整个视口高度 */
+    position: fixed; /* 固定定位 */
+    left: 275px; /* 左边距，位于侧边栏右侧 */
+    top: 0; /* 顶部对齐 */
+    background-color: #f0f0f0; /* 背景颜色改为浅灰色 */
+    padding: 20px; /* 内边距 */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+}
+
+/* 文章导航样式 */
+.article-nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 150px;
+    background-color: #333333; /* 背景颜色改为深灰色 */
+    color: #ffffff; /* 文字颜色改为白色 */
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    overflow-y: auto;
+}
+
+/* 文章导航链接样式 */
+.article-nav p {
+    text-align: center;
+    display: block;
+    margin: 10px 0;
+    color: #ffffff; /* 链接颜色改为白色 */
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.article-nav p:hover {
+    color: #aaaaaa; /* 悬停时的颜色改为浅灰色 */
+}
+
+
+/* 内容区域标题样式 */
+.content h1 {
+    font-size: 2em; /* 字体大小 */
+    margin-bottom: 50px; /* 下边距 */
+    color: #333333; /* 标题颜色改为深灰色 */
+}
+
+/* 内容区域副标题样式 */
+.content h2 {
+    font-size: 1.5em; /* 字体大小 */
+    margin-top: 50px; /* 上边距 */
+    color: #333333; /* 副标题颜色改为深灰色 */
+}
+
+/* 内容区域段落样式 */
+.content p {
+    line-height: 1.6; /* 行高 */
+    margin-bottom: 50px; /* 下边距 */
+    color: #333333; /* 段落文字颜色改为深灰色 */
+}
+
+/* 内容区域图片样式 */
+.content img {
+    max-width: 100%; /* 图片最大宽度 */
+    height: auto; /* 自动调整高度 */
+    margin: 50px 0; /* 上下边距 */
+}
+
+/* Softwares 链接悬停样式 */
+.sub-menu p:hover {
+    cursor: pointer; /* 悬停时显示点击手型 */
+}
+
+/* 内容区域样式 */
+#main-content {
+    padding: 20px; /* 内边距 */
+    margin-left: 275px; /* 左边距，避开侧边栏和二级菜单 */
+    margin-right: 220px; /* 右边距，避开文章导航 */
+    height: 100vh; /* 内容区域高度，占满整个视口高度 */
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHZ's Blog</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="_SpecialEffects/typing.css" />
+    <link rel="stylesheet" type="text/css" href="_SpecialEffects/switcher.css" />
+    <link rel="stylesheet" type="text/css" href="_SpecialEffects/HidingCat.css" />
+    <link rel="stylesheet" type="text/css" href="_SpecialEffects/click-effect.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6" async></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_SpecialEffects/particle-background.js" defer></script>
+    <script src="_SpecialEffects/rotate-avatar.js"></script>
+    <script src="_SpecialEffects/switcher.css"></script>
+    <script src="Libs/jquery-1.11.2.min.js" defer></script>
+    <script src="_SpecialEffects/HidingCat.js" defer></script>
+    <!--   <script src="_SpecialEffects/click-effect.js"></script>   -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- 主菜单的侧边栏 -->
+    <div id="main-menu" class="sidebar">
+        <!-- 昼夜主题切换滑动开关 -->
+        <div class="switch">
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+              </label>
+        </div>
+        <!-- 个人资料区块 -->
+        <div class="profile">
+            <!-- 头像图片 -->
+            <img src="common_pics/avatar.png" alt="Your Avatar" class="avatar">
+            <!-- 博主名字 -->
+            <h1>Dong Haozhe</h1>
+            <!-- 博主邮箱 -->
+            <p>Email: <a href="mailto:D1HaoZhe@gmail.com">D1HaoZhe@gmail.com</a></p>
+        </div>
+        <!-- 导航菜单 -->
+        <nav>
+            <ul>
+                <!-- 返回主页 -->
+                <li><p onclick="window.location.href='index.html'">HomePage</p></li>
+                <!-- 点击项，显示“About Me”子菜单 -->
+                <li><p onclick="toggleSubmenu('aboutme-submenu')">About Me</p></li>
+                <!-- 点击项，显示“Physics”子菜单 -->
+                <li><p onclick="toggleSubmenu('physics-submenu')">Physics</p></li>
+                <!-- 点击项，显示“Astronomy”子菜单 -->
+                <li><p onclick="toggleSubmenu('astro-submenu')">Astronomy</p></li>
+                <!-- 点击项，显示“Coding”子菜单 -->
+                <li><p onclick="toggleSubmenu('coding-submenu')">Coding</p></li>
+                <!-- 点击项，显示“Miscellaneous”子菜单 -->
+                <li><p onclick="toggleSubmenu('misc-submenu')">Miscellaneous</p></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- 主内容区 -->
+    <div>
+        <!-- 子菜单的容器 -->
+        <div id="submenu" class="sub-menu">
+            <!-- “About Me”子菜单 -->
+            <div id="aboutme-submenu">
+                <!-- 加载“Biography”页面并滚动到对应部分 -->
+                <p onclick="loadContent('AboutMe/about.html', function() { scrollToElement('biography'); })">Biography</p>
+                <p onclick="loadContent('AboutMe/about.html', function() { scrollToElement('research'); })">Research</p>
+                <p onclick="loadContent('AboutMe/about.html', function() { scrollToBottom(); })">Contact</p>
+            </div>            
+            <!-- “Miscellaneous”子菜单 -->
+            <div id="misc-submenu">
+                <p onclick="loadContent('Miscellaneous/summerCamp2024.html')">Summer Camps in 2024</p>
+            </div>
+            <!-- “Physics”子菜单 -->
+            <div id="physics-submenu">
+                <p onclick="toggleSubmenu('general-relativity-submenu')">General Relativity</p>
+                <p onclick="toggleSubmenu('QM-submenu')">Quantum Mechanics</p>
+                <p onclick="toggleSubmenu('QFT-submenu')">Field Quantification</p>
+                <p onclick="toggleSubmenu('differential-geometry-submenu')">Differential Geometry</p>
+            </div>
+            <!-- “Coding”子菜单 -->
+            <div id="coding-submenu">
+                <p onclick="loadContent('Coding/DeepLearning.html')">Deep Learning</p>
+                <p onclick="loadContent('Coding/Classical MachineLearning Methods.html')">MachineLearning</p>
+            </div>
+            <!-- “Astronomy”子菜单 -->
+            <div id="astro-submenu">
+                <p onclick="toggleSubmenu('astro-Theories_Observations')">Theories & Observations</p>
+                <p onclick="toggleSubmenu('astro-softwares-submenu')">Softwares</p>
+                <p onclick="toggleSubmenu('astro-simulations-submenu')">Numerical Simulations</p>
+            </div>
+            <!-- “Physics-General Relativity”子菜单 -->
+            <div id="general-relativity-submenu">
+                <p onclick="goBackToSubmenu('physics-submenu')">← Back</p>
+                <p onclick="loadContent('physics/GeneralRelativity/GeneralRelativity1.html')">General Relativity 1</p>
+                <p onclick="loadContent('physics/GeneralRelativity/GeneralRelativity2.html')">General Relativity 2</p>
+                <p onclick="loadContent('physics/GeneralRelativity/GeneralRelativity3.html')">General Relativity 3</p>
+            </div>
+            <!-- “Physics-QM”子菜单 -->
+            <div id="QM-submenu">
+                <p onclick="goBackToSubmenu('physics-submenu')">← Back</p>
+                <p onclick="loadContent('physics/QuantumMachanics/BCH_Equation.html')">BCH Equation</p>
+            </div>
+            <!-- “Physics-QFT”子菜单 -->
+            <div id="QFT-submenu">
+                <p onclick="goBackToSubmenu('physics-submenu')">← Back</p>
+                <p onclick="loadContent('physics/QFT/QFT1.html')">QFT 1</p>
+                <p onclick="loadContent('physics/QFT/QFT2.html')">QFT 2</p>
+                <p onclick="loadContent('physics/QFT/QFT3.html')">QFT 3</p>
+            </div>
+            <!-- “Physics-differential-geometry-submenu”子菜单 -->
+            <div id="differential-geometry-submenu">
+                <p onclick="goBackToSubmenu('physics-submenu')">← Back</p>
+                <p onclick="loadContent('physics/DifferentialGeometry/DG_Claim.html')">Foreword</p>
+                <p onclick="loadContent('physics/DifferentialGeometry/DG1.html')">Chapter 1</p>
+            </div>
+            <!-- “Astronomy-Theories & Observations”子菜单 -->
+            <div id="astro-Theories_Observations">
+                <p onclick="goBackToSubmenu('astro-submenu')">← Back</p>
+                <p onclick="loadContent('Astronomy/theories/EllipticalGalaxies.html')">Elliptical Galaxies</p>
+                <p onclick="loadContent('Astronomy/theories/SpiralGalaxies.html')">Spiral Galaxies</p>
+                <p onclick="loadContent('Astronomy/theories/gravitationallensing.html')">Gravitational Lensing</p>
+            </div>             
+            <!-- “Astronomy-Softwares”子菜单 -->
+            <div id="astro-softwares-submenu">
+                <p onclick="goBackToSubmenu('astro-submenu')">← Back</p>
+                <p onclick="loadContent('Astronomy/softwares/BASS.html')">Bass</p>
+                <p onclick="loadContent('Astronomy/softwares/software2.html')">Fits Liberator</p>
+                <p onclick="loadContent('Astronomy/softwares/software3.html')">Software 3</p>
+            </div>
+            <!-- “Astronomy-Numerical Simulations”子菜单 -->
+            <div id="astro-simulations-submenu">
+                <p onclick="goBackToSubmenu('astro-submenu')">← Back</p>
+                <p onclick="loadContent('Astronomy/Numerical/IllustrisTNG.html')">IllustrisTNG</p>
+            </div>
+        </div>
+        <!-- 主内容区 -->
+        <div id="main-content" class="content">
+            <div class="container">
+                <div class="typed-out">Welcome to DHZ's Blog!</div>
+            </div>
+        </div>
+    </div>
+    <div id="article-nav" class="article-nav">
+        <!-- 动态加载文章导航 -->
+    </div>
+</body>
+</html>
