@@ -1,0 +1,24 @@
+.icon-links {
+    display: flex;
+    gap: 100px; /* 图标之间的间距 */
+    justify-content: center; /* 居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    margin-top: 50px;
+}
+
+.icon-links a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.icon-links a:hover {
+    color: var(--hover-color); /* 使用您的定义变量或任意颜色 */
+}
+
+.icon-links .icon {
+    width: 48px; /* 根据需要调整图标大小 */
+    height: 48px; /* 根据需要调整图标大小 */
+}

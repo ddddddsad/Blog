@@ -1,0 +1,38 @@
+:root {
+    --z-background: 1;
+    --z-content: 5;
+}
+
+/* 二级菜单样式，默认隐藏 */
+.sub-menu {
+    display: none;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.sub-menu.show {
+    display: block;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.sub-menu {
+    text-align: center;
+    width: 180px;
+    height: 100vh;
+    color: #595959;
+    position: fixed;
+    left: 265px;
+    top: 0;
+    background-color: rgb(255, 247, 235);
+    padding: 20px;
+    box-shadow: 4px 0 8px #0000001a;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.sub-menu p:hover {
+    display: block;
+    color: #000000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}

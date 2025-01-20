@@ -1,0 +1,33 @@
+:root {
+    --z-background: 1;
+    --z-content: 5;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+    width: 220px;
+    background-color: #203431;
+    color: #ffffff;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    position: fixed;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 侧边栏链接样式 */
+.sidebar p {
+    text-align: center;
+    display: block;
+    margin: 10px 0;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.sidebar p:hover {
+    color: #aaaaaa;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}

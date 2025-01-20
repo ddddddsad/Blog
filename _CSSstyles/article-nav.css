@@ -1,0 +1,71 @@
+:root {
+    --z-background: 1;
+    --z-content: 5;
+}
+
+/* 文章导航样式 */
+.article-nav {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 200px; /* 展开时的宽度 */
+    background-color: #203431;
+    color: #ffffff;
+    padding: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    height: 100vh;
+    overflow-y: auto;
+    z-index: var(--z-content); /* 确保内容在前景 */
+    transition: width 0.3s ease; /* 平滑过渡效果 */
+}
+
+/* 导航栏缩小时的样式 */
+.article-nav.collapsed {
+    width: 60px; /* 缩小时的宽度 */
+    padding: 20px 5px; /* 缩小时的内边距 */
+}
+
+/* 鼠标悬停时展开导航栏 */
+.article-nav:hover {
+    width: 200px; /* 展开时的宽度 */
+}
+
+/* 文章导航内容默认隐藏 */
+.article-nav .nav-content {
+    display: none;
+}
+
+/* 导航栏展开时显示内容 */
+.article-nav:hover .nav-content {
+    display: block;
+}
+
+/* 文章导航列表样式 */
+.article-nav .nav-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.article-nav .nav-content li {
+    margin: 10px 0;
+}
+
+.article-nav .nav-content a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 5px;
+}
+
+/* 链接悬停效果 */
+.article-nav .nav-content a:hover {
+    color: #aaaaaa;
+}
+
+/* 当前活动链接高亮 */
+.article-nav .nav-content a.active {
+    font-weight: bold;
+    color: #00ff00; /* 或其他突出显示的颜色 */
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>An Introduction to Differential Geometry in One Article (Physical Man Edition)</title>
+    <link rel="stylesheet" type="text/css" href="_CSSstyles/style.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../Libs/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="../script.js" type="text/javascript"></script>
+    
+    <meta name="description" content="Baker-Campbell-Hausdorff Formula explanation and application">
+</head>
+<body>
+    <div class="header-section">
+        <h1>微分几何</h1>
+        <div class="date-tags">
+            <img src="../common_pics/icons-calendar.png" alt="Date Icon" class="icon">
+            <span class="date">2024-09-02 08:50:10</span>
+            <img src="../common_pics/icons-tag.png" alt="Tag Icon" class="icon">
+            <span class="tags-contents-list">
+                <span class="tag-content">Physics</span>
+            </span>
+        </div>
+    </div>
+    <div class="content" id="content">
+        <section>
+            <div class="foreword">
+                作为物理人，你很可能听过张量，微分形式，李代数 … 等等概念的其中一个或者多个。但是你可能像我一样，每次听到这些概念的时候都感觉云里雾里。因此，本文旨在帮助物理人，为这些彼此紧密联系的诸概念进行一个梳理。
+    
+                <p>本文的结构如下：</p>
+    
+                <p>a. 在第一章中，我们引入物理学的舞台：微分流形，并定义流形上的标量场。</p>
+    
+                <p>b. 在第二章中，我们引入切空间和切丛等概念，并定义流形上的矢量场和张量场。最后，我们还定义内积和度规张量，它们是通往黎曼流形和广义相对论的门票。</p>
+    
+                <p>c. 在第三章中，我们引入外积、外代数等概念，并在流形上研究微分（外微分）。最后，我们介绍一下 Hodge 对偶，它将内积与外积一种美妙的方式联系起来。</p>
+    
+                <p>d. 在第四章中，我们引入两种导数，即协变导数和李导数。</p>
+    
+                <p>协变导数描述了流形上的联络，并可以用来定义平移、测地线和曲率。基于这些概念，我们就可以简要介绍广义相对论；</p>
+    
+                <p>李导数描述了流形上向量场的“流动”，它是非常有用的一个概念，可以用来漂亮地定义散度、挠率、曲率等等概念。</p>
+    
+                <p>e. 在第五章中，我们引入单形、链等概念，并在流形上研究积分。另外，我们简单介绍同调和上同调，它们用来研究流形上的“孔洞”。</p>
+    
+                <p>f. 在第六章中，我们引入作为微分流形的群——李群，并研究李群的切空间——李代数，并介绍它们在物理学中的应用。</div></p>
+        </section>
+        
+        <h1>第一章 流形和流形上的标量场</h1>
+        <section>
+            <div>
+                <p>本章介绍微分流形及其涉及的前置知识。</p>
+                <p>具体来说，本章首先介绍拓扑空间，其次介绍拓扑流形，最后介绍微分流形，以及微分流形上的标量场。每一个概念都建立在前一个概念的基础之上。</p>
+            </div>
+        </section>
+    
+        <div>
+            <h2>1.1 拓扑(Topology)</h2>
+            <p><strong>非空集合</strong> \( X \) 的 <strong>拓扑</strong> 定义为 \( X \) 的子集的集合（即子集族） \(\mathcal{F}\)，且\(\mathcal{F}\)满足如下三个性质：
+                <p>1. \(\mathcal{F}\) 中任意多个子集的交集仍属于 \(\mathcal{F}\)。</p>
+                <p>2. \(\mathcal{F}\) 中有限个（或任意两个）集合的交集依然在 \(\mathcal{F}\) 中。</p>
+                <p>3. \(\emptyset，X \in \mathcal{F}\)。</p>
+            </p>
+        </div>
+
+        <div>
+            <h2>1.9 标量场（Scalar Field）</h2>
+            <p>定义微分流形上的（实）标量场\( f:M \rightarrow \mathbb{R} \) 为两个映射的复合：\( f=F\phi \)</p>
+            <p>其中\( \phi \)是从O到 \( \varphi [O] \subseteq \mathbb{R}^n\)的同胚，\(F\) 是从 \(\varphi[O]\) 到 \(\mathbb{R}\) 的函数。</p>
+            <p>若 \(F\) 还是从 \(\varphi[O]\) 到 \(\mathbb{R}\) 的光滑函数，则称 \(f\) 是一个光滑标量场。</p>
+            <p> \(M\) 上所有光滑标量场的集合记为 \(\mathcal{F}(M)\) 。</p>
+            <div class="highlight">
+                <strong>评论</strong> 
+                <p>为了确保我们的光滑标量场是良定义的，需要确保\(O_\alpha\) 和 \(O_\beta\) 相交的部分不出问题。幸运地是， \(\varphi_\beta\circ\varphi_\alpha^{-1}\) 的光滑性保证了这一点。</p>
+                <p>更具体地说，对于 \(O_\alpha\) 和 \(O_\beta\) 相交的部分，有\(f=F_\alpha \circ \varphi_\alpha=F_\beta \circ \varphi_\beta \implies F_\alpha=F_\beta\circ \varphi_\beta \circ \varphi_\alpha^{-1}\)。</p>
+                <p>如果 \(\varphi_\beta\circ\varphi_\alpha^{-1}\) 不是光滑函数的话，那么 \(F_\beta\) 光滑就不能保证 \(F_\alpha\) 光滑。这将导致定义不良。</p>
+                <p>将定义中的 \(\mathbb{R}\) 换成 \(\mathbb{C}\) ，我们就能从实标量场的定义得到复标量场的定义。</p>
+            </div>
+        </div>
+        
+        <h1>第二章 流形上的矢量场和张量场</h1>
+        <section>
+            <div>
+                <p>在本章中，我们首先引入切空间和对偶空间等概念。</p>
+                <p>其次，基于这些概念，我们定义微分流形上的矢量场和张量场。</p>
+                <p>最后，我们介绍内积和度规张量，它们是微分流形上的额外结构。在配备了度规张量之后，一个微分流形就成为了一个（伪）黎曼流形。</p>
+            </div>
+        </section>
+    
+        <div>
+            <h2>2.1 切向量、切空间（Tangent Vector, Tangent Space）</h2>
+            <p>记 \( F(M) \) 为微分流形\( M \) 上所有光滑标量场\( f:M \rightarrow \mathbb{R} \) 构成的集合。</p>
+            <p>微分流形 \( M \) 上的一点 \( p \) 处的 <strong>切向量</strong> \( v_p \) 是一个线性映射，它将光滑标量场 \( f \in F(M) \) 映射到实数 \( v_p(f) \)，满足线性性与乘积规则，即：</p>
+            <ul>
+                <li>线性性：对于任意两个标量场 \( f, g \in F(M) \) 和任意实数 \( a, b \)，有
+                    \( v_p(af + bg) = a v_p(f) + b v_p(g) \)；</li>
+                <li>乘积规则：\( v_p(fg) = f(p) v_p(g) + g(p) v_p(f) \)。</li>
+            </ul>
+            <p>由于线性性，点 \(p\) 处的所有切向量构成一个向量空间。将这个空间称为点 \(p\) 处的切空间，记作 \( T_pM \)。</p>
+            <p>实际上，满足以上两个条件的数学对象就是求方向偏导的算子 \(\left.\left(v^i\frac{\partial}{\partial x^i}\right)\right|_p: f\mapsto \left.\left(v^i\frac{\partial f}{\partial x^i}\right)\right|_p\) ，它将一个光滑标量场映射为一个标量。</p>
+            <p>在上式中我们用到了爱因斯坦求和约定（Einstein Convention），也就是对相同的指标进行求和。后面如无特别说明，对上下标一律使用爱因斯坦求和约定。</p>
+            <p>可以看出，切空间的基可以写成 \(\frac{\partial}{\partial x^i}\)，简记为 \( \partial_i \)。</p>
+            <div class="highlight">
+                <strong>评论</strong>
+                <p>你可以把点 \(p\) 处的切空间想象成与点 \(p\) 相切的那个超平面。</p> 
+                <p>一个单位切向量作用到一个流形上的标量场，会得到标量场沿该切向量方向的方向导数。</p>
+                <p>注意， \(\frac{\partial f}{\partial x^i}\) 实际上指的是 \(\frac{\partial F}{\partial x^i}\)（见第 1.9 节），但是在不引起歧义的情况下，我们都写成 \(\frac{\partial f}{\partial x^i}\)。</p>
+            </div>
+        </div>
+    
+        <div>
+            <h2>2.2 切丛、向量场（Tangent Bundle, Vector Field）</h2>
+            <p>切丛 \( TM \)  定义为这样一个集合：$$\{(p,v) \mid p \in M, v \in T_p M\}$$，它是流形上所有点与该点处的所有切向量的有序对的集合。</p>
+            <p>切丛的截影（Section）定义为这样一个映射： \(M\rightarrow TM \) ，它将点 \( p \) 映射为 \( (p,v) \) 。</p>
+            <div class="highlight">
+                <strong>评论</strong> 
+                <p>当我们在说截影的时候，我们一般指的都是光滑截影。光滑的意思是说，它是一个映射，它将一个曲线映射到另一个曲线，而不只是将点映射到点。</p>
+            </div>
+            <p>（切）向量场定义为切丛的一个截影。如果这个截影是光滑的，那么我们则称向量场是光滑的。</p>
+            <p>切丛上所有向量场的集合可以记为 \(\Gamma(TM)\) 。</p>
+            <div class="highlight">
+                <strong>评论</strong>
+                <p>如果我们直接定义向量场是切丛本身，那么对于某一点 \( p\in M\) ，由于切丛 \(TM\) 中不仅有 \((p,v_1)\) 这个元素，还有 \((p,v_2)\) 这个元素，且 \(v_2\neq v_1\) ，因此我们没办法将某一点 \(p\) 与该点的切空间 \(T_pM\) 中唯一的一个向量对应起来。而如果将向量场定义为一个映射 \(p\mapsto (p,v)\) ，我们就可以做到这一点。</p>
+                <p>对于向量场的光滑性，你可能想问映射 \(M\rightarrow TM\) 的光滑性是如何定义的。实际上，如果 \(M\) 是一个 \(n\) 维流形，则 \(TM\) 是一个 \(2n\) 维流形，而从流形到流形的映射的光滑性，我们在第 1.8 节已经定义过了。</p>
+            </div>
+        </div>
+    
+        <div>
+            <h2>2.3 对偶空间、自然同构（Dual Space, Natural Isomorphism）</h2>
+            <p>一个向量空间 \(V\) 的对偶空间  \(V^*\) 定义为该向量空间上的所有线性泛函的集合。</p>
+            <p>更具体地说，线性泛函是一个映射\(v^*:V \rightarrow \mathbb{R}\)，且满足线性性：\(v^*(\lambda a + \mu b) = \lambda v^*(a) + \mu v^*(b)\)。它将向量空间 \(V\) 中的元素映射成一个实数。</p>
+        </div>
+
+        <div>
+            <h2>2.4 余切空间、余切丛（Cotangent Space, Cotangent Bundle）</h2>
+        </div>
+
+        <div>
+            <h2>2.5 微分（Differential）</h2>
+        </div>
+
+        <div>
+            <h2>2.6 多重线性映射（Multilinear Map）</h2>
+        </div>
+
+        <div>
+            <h2>2.7 张量积（Tensor Product）</h2>
+        </div>
+
+        <div>
+            <h2>2.8 张量和张量场（Tensor， Tensor Field）</h2>
+        </div>
+    
+        <div>
+            <h2>2.9 内积与度规张量</h2>
+            <p>内积是一种特殊的张量，它将两个切向量映射为一个实数。流形上每一点 \( p \) 处的内积可以用来定义 <strong>度规张量</strong>。</p>
+            <p><strong>度规张量</strong> 是流形上每一点的切空间内积的光滑族。度规张量赋予了流形上的几何结构，使得我们可以定义距离、角度等概念。</p>
+            <p>当度规张量的符号为 \( (+,-,-,-) \) 时，流形称为伪黎曼流形，这是广义相对论中的基本结构。</p>
+        </div>
+    </div> 
+</body>
+</html>

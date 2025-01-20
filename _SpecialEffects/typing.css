@@ -1,0 +1,31 @@
+body {
+  background: rgb(255, 247, 235);
+  font-family: 'Trebuchet MS', sans-serif; 
+}
+
+.container {
+  text-align: center;
+}
+
+.typed-out {
+  overflow: hidden;
+  border-right: .30em solid orange;
+  border-radius: 4px;
+  white-space: nowrap;
+  animation: 
+    typing 3s steps(20, end) forwards,
+    blinking 1s infinite;
+  font-size: 1.6rem;
+  color: #203431;
+  display: inline-block;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blinking {
+  from { border-color: transparent }
+  to { border-color: green; }
+}

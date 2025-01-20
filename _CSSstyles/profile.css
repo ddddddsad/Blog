@@ -1,0 +1,45 @@
+:root {
+    --z-background: 1;
+    --z-content: 5;
+}
+
+/* 个人资料样式 */
+.profile {
+    text-align: center;
+    margin-bottom: 100px;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.profile .avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.profile h1 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #ffffff;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.profile p {
+    font-size: 1em;
+    margin: 5px 0;
+    color: #ffffff;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.profile a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.profile a:hover {
+    color: #aaaaaa;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}

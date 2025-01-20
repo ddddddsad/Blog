@@ -1,0 +1,43 @@
+:root {
+    --z-background: 1;
+    --z-content: 5;
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.header-section h1 {
+    font-size: 2em !important;
+    color: #203431 !important;
+    margin-bottom: 5px !important;
+    z-index: var(--z-content) !important; /* 确保内容在前景 */
+}
+
+.icon {
+    height: 16px;
+    margin-bottom: -2px;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.date {
+    line-height: 1.6;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right:20px;
+    color: #333333;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+.tag-content {
+    display: inline-block; /* 确保标签的宽度和高度适应内容 */
+    line-height: 1.6;
+    margin: 5px; /* 标签之间的间距 */
+    padding: 3px 8px; /* 内边距，以增加标签的点击区域 */
+    border: 1px solid #333333; /* 边框颜色 */
+    border-radius: 12px; /* 圆角边框 */
+    color: #333333;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}

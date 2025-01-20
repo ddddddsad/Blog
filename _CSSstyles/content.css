@@ -1,0 +1,46 @@
+:root {
+    --z-background: 1;
+    --z-content: 5;
+}
+
+/* 内容区域样式 */
+#main-content {
+    padding: 10px;
+    margin-left: 150px;
+    margin-right: 50px;
+    margin-bottom: 100px;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 内容区域标题样式 */
+.content {
+    z-index: var(--z-content); /* 确保内容在前景 */
+    margin-left: 0px;
+    margin-right: 50px;
+}
+
+.content h1 {
+    font-size: 2em;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    color: #203431;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 内容区域副标题样式 */
+.content h2 {
+    font-size: 1.5em;
+    margin-top: 30px;
+    margin-top: 30px;
+    color: #203431;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 内容区域段落样式 */
+.content p {
+    line-height: 1.6;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #333333;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}

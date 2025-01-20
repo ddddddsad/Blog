@@ -1,0 +1,134 @@
+:root {
+    --z-background: 1;
+    --z-content: 5;
+}
+
+/* 设置基本的全局样式 */
+body {
+    font-family: 'Trebuchet MS', sans-serif; 
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: rgb(255, 247, 235);
+    color: #333333;
+    position: relative; 
+}
+
+body.dark-mode {
+    font-family: 'Trebuchet MS', sans-serif; 
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: rgb(29, 26, 21);
+    color: #ffffff;
+    position: relative; 
+}
+
+.container {
+    position: absolute; /* 使用绝对定位 */
+    top: 50%; /* 设置距离顶部的距离 */
+    left: 50%; /* 设置距离左边的距离 */
+    transform: translate(-50%, -50%); /* 通过变换确保元素居中 */
+    text-align: center;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 高对比度模式样式 */
+@media (forced-colors: active) {
+    body {
+        background-color: Window;
+        color: WindowText;
+    }
+
+    .profile {
+        color: ButtonText;
+        background-color: ButtonFace;
+    }
+
+    .sidebar {
+        color: ButtonText;
+        background-color: ButtonFace;
+    }
+
+    .article-nav {
+        color: ButtonText;
+        background-color: ButtonFace;
+    }
+}
+
+/* 为图片设置相对定位，并确保 z-index 生效 */
+img {
+    position: relative; /* 确保 z-index 生效 */
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    z-index: var(--z-content);
+}
+
+/* 内容区域图片样式 */
+img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    z-index: var(--z-content); /* 确保内容在前景 */
+}
+
+/* 悬停时的图片样式 */
+img:hover {
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2); /* 添加边框阴影 */
+    transform: scale(1.02); /* 稍微放大图片，增加悬停效果 */
+    z-index: var(--z-content)
+}
+
+@keyframes slow-rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    animation: slow-rotation 10s linear infinite; /* 定义缓慢旋转的动画 */
+    transition: animation 0.3s ease; /* 平滑停止动画 */
+}
+
+.highlight {
+    background-color: #cbefe2; /* 设置背景颜色为浅蓝色 */
+    border-left: 10px solid #203431; /* 左侧的蓝色边框 */
+    padding: 10px; /* 内边距 */
+    margin: 10px 0; /* 上下外边距 */
+    border-radius: 10px; /* 圆角边框 */
+    z-index: var(--z-background); /* 确保内容在前景 */
+}
+
+.cursive {
+    font-family: 'Script MT';
+}
+
+.enter-site-button {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.enter-site-button button {
+    background-color: #203431;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.enter-site-button button:hover {
+    background-color: #0f1f21;
+}
+

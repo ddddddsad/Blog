@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elliptical Galaxies</title>
+    <link rel="stylesheet" type="text/css" href="_CSSstyles/style.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../Libs/jquery-1.11.2.min.js" type="text/javascript"></script>
+    <script src="../script.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="content">
+        <!-- 文章内容 -->
+        <article>
+            <h1>Main Title</h1>
+            <h2>Subtitle 1</h2>
+            <h3>Section 1.1</h3>
+            <h3>Section 1.2</h3>
+            <h2>Subtitle 2</h2>
+            <h3>Section 2.1</h3>
+            <!-- 更多内容 -->
+        </article>
+        <!-- “进入网站”按钮 -->
+        <div class="enter-site-button">
+            <button onclick="loadContent('recent-articles.html', function() { scrollToBottom(); })">Enter Site</button>
+        </div>
+    </div>
+    <div id="article-nav" class="article-nav collapsed">
+        <div class="nav-content">
+            <!-- 目录生成将放置在这里 -->
+        </div>
+    </div>  
+</body>
+</html>
